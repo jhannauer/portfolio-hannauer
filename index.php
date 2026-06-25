@@ -224,7 +224,7 @@ function indexTagClass(string $tagClass): string
     </div>
 
     <div class="mx-auto max-w-5xl px-6 py-10">
-      <div class="mb-4 text-xs font-medium uppercase tracking-[0.1em] text-slate-500">Stages</div>
+      <div class="mb-4 text-xs font-medium uppercase tracking-[0.1em] text-slate-500">Stages et Experiences professionelles</div>
       <div class="flex flex-col gap-3">
         <div class="rounded-2xl border border-slate-200 bg-white px-5 py-4">
           <div class="flex items-start justify-between gap-3">
@@ -251,6 +251,32 @@ function indexTagClass(string $tagClass): string
             <div class="whitespace-nowrap text-xs font-medium text-slate-400">Fév. — Avr. 2026</div>
           </div>
           <p class="mt-3 text-sm leading-6 text-slate-600">Refonte du site web de l'association Alsace Digitale, avec une méthode agile et des réunions de planification régulières.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white px-5 py-4">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-100 text-base text-violet-900"><i class="fa-solid fa-briefcase"></i></div>
+              <div>
+                <div class="text-sm font-medium text-slate-900">SPA de Strasbourg</div>
+                <div class="mt-0.5 text-xs text-slate-500">Communication</div>
+              </div>
+            </div>
+            <div class="whitespace-nowrap text-xs font-medium text-slate-400">Mai. — Jui. 2025</div>
+          </div>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Création de contenus divers pour les réseaux sociaux</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white px-5 py-4">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-violet-100 text-base text-violet-900"><i class="fa-solid fa-briefcase"></i></div>
+              <div>
+                <div class="text-sm font-medium text-slate-900">Drive Leclerc, Geispolsheim</div>
+                <div class="mt-0.5 text-xs text-slate-500">Employée polyvalente</div>
+              </div>
+            </div>
+            <div class="whitespace-nowrap text-xs font-medium text-slate-400">Jui. 2023 — août. 2024</div>
+          </div>
+          <p class="mt-3 text-sm leading-6 text-slate-600">Réalisation de tâches variées dans un environnement de commandes de clients</p>
         </div>
       </div>
     </div>
