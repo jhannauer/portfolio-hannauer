@@ -19,3 +19,11 @@ Portfolio personnel présentant mes projets réalisés du lycée jusqu’à aujo
 
 ## Installation / lancement
 Pour consulter le site, il suffit d’un serveur PHP local comme XAMPP.
+
+1. Placer le dossier dans htdocs/ et accéder via localhost/www/
+
+2. Installer les dépendances
+   npm install
+
+3. Compiler Tailwind
+   npx tailwindcss -i ./assets/input.css -o ./assets/tailwind.css --watch
