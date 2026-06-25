@@ -300,6 +300,7 @@ return [
             ['class' => 'pink', 'label' => 'Miro'],
             ['class' => 'pink', 'label' => 'Trello'],
             ['class' => 'pink', 'label' => 'Cahier des charges'],
+            ['class' => 'pink', 'label' => 'Question et tests utilisateurs'],
             ['class' => 'green', 'label' => 'Figma'],
             ['class' => 'green', 'label' => 'Canva'],
             ['class' => 'green', 'label' => 'DaVinci Resolve'],

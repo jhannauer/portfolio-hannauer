@@ -181,6 +181,7 @@ function indexTagClass(string $tagClass): string
             <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Agile</span>
             <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Miro</span>
             <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Trello</span>
+            <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Question et tests utilisateurs</span>
             <span class="inline-flex rounded-full bg-rose-100 px-3 py-1 text-xs font-medium text-rose-700">3D</span>
           </div>
         </a>
@@ -211,6 +212,7 @@ function indexTagClass(string $tagClass): string
             <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Miro</span>
             <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Trello</span>
             <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Accessibilité</span>
+            <span class="inline-flex rounded-full bg-pink-100 px-3 py-1 text-xs font-medium text-pink-700">Question et tests utilisateurs</span>
             <span class="inline-flex rounded-full bg-rose-100 px-3 py-1 text-xs font-medium text-rose-700">3D</span>
             <span class="inline-flex rounded-full bg-rose-100 px-3 py-1 text-xs font-medium text-rose-700">IA générative</span>
             <span class="inline-flex rounded-full bg-rose-100 px-3 py-1 text-xs font-medium text-rose-700">Réalité virtuelle</span>

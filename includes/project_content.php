@@ -616,6 +616,7 @@ return [
                     ['href' => 'https://www.figma.com/design/JA5uzvmgMces0jBPdkbCgS/Untitled?node-id=0-1&t=p5O4S1n5IdmmMi33-1', 'label' => 'Figma', 'class' => 'green'],
                     ['href' => 'https://miro.com/welcomeonboard/VkNOWU5IR1Z3WktWK1VlNjVWL0tpMkRseitHUGNwTzliOWIwZEk0aDc1WHl1UmZ2N2kra1NuSUtXdDdXMGVoeExrNFloeXFLZDdnbDZxQlpuMkkzU3lSZGU4ZWZJSjlDQWJuSWJtN3p5Z3krOHBJaXJLd282LzFSOWdFaEZMVVhzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=648253156253', 'label' => 'Miro', 'class' => 'pink'],
                     ['href' => 'https://docs.google.com/document/d/12mklBhtCXjx1dXz67jwNGsWHcKEceK6zN1AFxriD1Hk/edit?usp=sharing', 'label' => 'Cahier des charges', 'class' => 'pink'],
+                    ['href' => 'https://docs.google.com/document/d/1sBa7JeuE_Js3o5He5dbinSdTP2tX9vjldhJZVLDleGs/edit?usp=sharing', 'label' => 'Question et tests utilisateurs', 'class' => 'pink'],
                 ],
             ],
             [
