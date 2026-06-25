@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilan des expériences de conduite</title>
+
+    <style>
+        body {
+            font-family: Verdana;
+            font-size: 14pt;
+            line-height: 45px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        header, footer {
+            background-color: #071ff8;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+            width: 100%;
+            justify-content: center;
+        }
+        footer {
+            display: flex;
+            width: 100%;
+        }
+
+        #Bilan {
+            background-color: white;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #km_total {
+            font-weight: bold;
+        }
+
+       
+    </style>
+
+    <script>
+        /*let Conduites = [];
+
+        
+
+        function ConduiteEnregistree() {
+            let Conduite = {
+                date: document.getElementById('date').value,
+                Debutheure: document.getElementById('Debutheure').value,
+                Finheure: document.getElementById('Finheure').value,
+                km: document.getElementById('km').value,
+                Meteo: document.getElementById('MeteoId').value,
+                Accompagnateur: document.getElementById('AccompagnateurId').value,
+                Fatigue: document.getElementById('FatigueId').value,
+                Circulation: document.getElementById('CirculationId').value,
+            };
+
+            Conduites.push(Conduite);
+            afficherExperiences()
+            let total_km = 0;
+            for (let conduite of Conduites) {
+                total_km += parseInt(conduite.km);
+            }
+            document.getElementById('km_total').textContent = total_km;
+        
+        function afficherExperiences() {
+            let html = '';
+            for (let conduite of Conduites) {
+                html += `
+                <p>Date : ${conduite.date}, 
+                Heure de Début : ${conduite.Debutheure}, 
+                Heure de Fin : ${conduite.Finheure}, 
+                km : ${conduite.ExpKm}, 
+                Meteo : ${conduite.ExpMeteo}, 
+                Accompagnateur : ${conduite.ExpAccompagnant}, 
+                Fatigue : ${conduite.ExpFatigue}, 
+                Circulation : ${conduite.ExpConduite}</p>
+                `;
+            }
+            document.getElementById('Bilan').innerHTML = html;
+            document.getElementById("Bilan").innerHTML = `<p>Date : ${date}, Heure de Début : ${Debutheure}, Heure de Fin : ${Finheure}, km : ${km},  Meteo : ${MeteoId},  Accompagnateur : ${AccompagnateurId},  Fatigue : ${FatigueId}, Circulation : ${CirculationId}</p>`
+
+        }
+        }*/
+
+        /*let html = ''
+    for (let conduite of JSON.parse(localStorage.LstExpConduite)) {
+        html += `<p>
+            Date : ${conduite.ExpDate}, 
+            Heure de Début : ${conduite.ExpHDep}, 
+            Heure de Fin : ${conduite.ExpHFin}, 
+            km : ${conduite.____},
+            Meteo : ${conduite.____},
+            Accompagnateur : ${conduite.____},
+            Fatigue : ${conduite.____},
+            Circulation : ${conduite.____}
+        </p>`;
+    }
+    document.getElementById('Bilan').innerHTML = html;*/
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <h1>Bilan des expériences de conduite</h1>
+    </header>
+    <br>
+
+    <div id="Bilan"></div>
+    <a href="MiniProjet.html">Retourner au Formulaire</a><br>
+
+    <p>Distance totale parcourue : <span id="ExpTotal"></span> km</p>
+
+    <footer>
+        <p>Créé par Justine Hannauer | Copyright © 2024</p>
+    </footer>
+
+
+    <script>
+
+    let html = ''
+    let km_tot = 0
+    for (let conduite of JSON.parse(localStorage.LstExpConduite)) {
+        html += `<p>
+            Date : ${conduite.ExpDate}, 
+            Heure de Début : ${conduite.ExpHeureDep}, 
+            Heure de Fin : ${conduite.ExpHeureFin}, 
+            Kilomètre : ${conduite.ExpKm},
+            Méteo : ${conduite.ExpMeteo},
+            Accompagnateur : ${conduite.ExpAccompagnant},
+            Fatigue : ${conduite.ExpFatigue},
+            Circulation : ${conduite.ExpConduite}
+            </p>`;
+    }
+    km_tot += parseInt(localStorage.km_total);
+    document.getElementById('Bilan').innerHTML = html;
+    document.getElementById('ExpTotal').innerHTML = km_tot;
+    </script>
+</body>
+</html>

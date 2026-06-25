@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+    /* Common styles NE PAS MODIFIER */
+    body, html{
+      padding:0;
+      margin:0;
+      background:#999;
+      width:100vw;
+      min-height:100vh;
+    }
+    header{
+      background:#feb;
+    }
+    article{
+      background:#dd8;
+    }
+    nav{
+      background:#ccf;
+    }
+    aside{
+      background:#ccf;
+    }
+    footer{
+      background:#feb;
+    }
+    header, article, nav, aside, footer{
+      border-radius:5px;
+      padding:5px;
+    }
+
+    /* Votre code CSS pour design par Grid ci-après */
+	
+	body {display: grid;
+  width: 100%;
+  height: 600px;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-rows: 80px 1fr 100px;
+  grid-gap: 1rem;
+  grid-template-areas:
+      "header header header"
+      "sidebar content-1 content-2"
+      "footer footer footer";
+  padding:10px;
+  box-sizing:border-box;
+      }
+	
+	body{font-family: Verdana; font-size: 14pt;}
+	
+	header{grid-area:header;}
+	footer{grid-area:footer}
+	nav{grid-area:sidebar;}
+	article{grid-area:content-1;}
+	aside{grid-area:content-2;}
+	
+	/* CSS pour les appareils mobiles */
+@media only screen and (max-width: 400px) {
+    body {
+        display: grid;
+  width: 100%;
+  grid-template-columns:1fr;
+  grid-template-rows:80px 1fr 80px 80px 80px;
+  grid-gap: 1rem;
+  grid-template-areas:
+      "header"
+      "content-1"
+      "sidebar" 
+      "content-2"
+      "footer";
+  
+}
+header{
+	grid-area : header;
+}
+nav{
+	grid-area : sidebar;
+}
+
+article{
+	grid-area : content-1;
+}
+aside{
+	grid-area : content-2;
+}
+
+footer{
+	grid-area: footer;
+}
+
+}
+
+  </style>
+</head>
+<!-- NE PAS MODIFIER LE CODE CI-APRES -->
+<body>
+  <header>Header</header>
+  <article>Article</article>
+  <nav>Navigation</nav>
+  <aside>Aside</aside>
+  <footer>Footer</footer>
+</body>
+</html>

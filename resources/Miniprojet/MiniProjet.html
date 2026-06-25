@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mon expérience de conduire">
+    <meta name="keywords" content="justine, hannauer, conduite, informatique">
+    <meta name="author" content="Justine Hannauer">
+    <title>Assistant d'Expérience de Conduite</title>
+    <style>
+        
+        body {
+            font-family: Verdana;
+            font-size: 14pt;
+            line-height: 45px;
+            text-align: center;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+
+        header, footer {
+            background-color: #071ff8;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: auto;
+            width: 100%;
+            justify-content: center;
+        }
+
+        footer {
+            display: flex;
+            width: 100%;
+        }
+
+        header p {
+            margin: 0; 
+            text-align: left;
+         }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            width: 100%; 
+            max-width: 800px; 
+            padding-bottom: 10px;
+        }
+
+        fieldset {
+            width: 100%; 
+        }
+
+        label {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+            white-space: nowrap;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        select, input {
+            line-height: normal;
+            text-align: center;
+        }
+
+        button {
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        
+        button.envoyer{
+        background-color: #13d11c;
+        }
+
+        button.reset{
+            background-color: #eb0404;
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            form {
+                grid-template-columns: 1fr;
+                width: fit-content;
+                display: inline-block;
+            }
+        }
+    </style>
+    <script>
+
+        localStorage.LstExpConduite ??= "[]"
+    
+        let Meteo = [
+            {"id": "1", "label": "Soleil"},
+            {"id": "2", "label": "Neige"},
+            {"id": "3", "label": "Pluie"},
+            {"id": "4", "label": "Nuageux"},
+            {"id": "5", "label": "Tempete"},
+            {"id": "6", "label": "Verglas"}
+        ];
+
+        let Fatigue = [
+            {"id": "1", "label": "Pas fatigue"},
+            {"id": "2", "label": "Un peu fatigue"},
+            {"id": "3", "label": "Beaucoup fatigue"},
+            {"id": "4", "label": "Tres fatigue"}
+        ];
+
+        let Accompagnant = [
+            {"id": "1", "label": "Mere"},
+            {"id": "2", "label": "Pere"},
+            {"id": "3", "label": "Autre"}
+        ];
+
+        let EtatDeConduite = [
+            {"id": "1", "label": "Pas beaucoup de circulation"},
+            {"id": "2", "label": "Un peu de circulation"},
+            {"id": "3", "label": "Beaucoup de circulation"}
+        ];
+        
+        var Kilometragetotal = 0;
+
+
+        let ExpConduite = [];
+        let listeExpConduite = localStorage.getItem("LstExpConduite");
+
+if (listeExpConduite && listeExpConduite.trim() !== "") {
+    ExpConduite = JSON.parse(listeExpConduite);
+}
+        document.onreadystatechange = function(){
+            if(document.readyState == "complete"){
+                populateAllSelect()
+            }
+        }
+
+        
+        function populateSelects(idSelect, data) {
+            var select = document.getElementById(idSelect);
+            data.forEach(function (item) {
+                let option = `<option value ="${item.id}">${item.label}</option>`
+                select.insertAdjacentHTML('beforeend', option); 
+            });
+        }
+        
+
+        function populateAllSelect() {
+            populateSelects('MeteoId', Meteo);
+            populateSelects('FatigueId', Fatigue);
+            populateSelects('AccompagnateurId', Accompagnant);
+            populateSelects('CirculationId', EtatDeConduite);
+        }
+
+        function ConfirmationDesDonnees(exp) {
+            const DataDeConfirmation = confirm(
+                "Confirmez-vous les données suivantes :\n" +
+                `Date: ${exp.date}\n` +
+                `Heure de Début: ${exp.Debutheure}\n` +
+                `Heure de Fin: ${exp.Finheure}\n` +
+                `Météo: ${exp.MeteoId}\n` +
+                `Kilométrage parcouru: ${exp.km}\n` +
+                `Accompagnateur: ${exp.AccompagnateurId}\n` +
+                `Fatigue: ${exp.FatigueId}\n` +
+                `Circulation: ${exp.CirculationId}\n` +
+                `Distance totale: ${exp.km_total ?? 0} km`
+            );
+
+            return DataDeConfirmation;
+        }
+
+        function DateHeureNonDoublons(exp) {
+    for (const experience of JSON.parse(localStorage.LstExpConduite)) {
+        if (exp.date == experience.ExpDate && !(exp.Debutheure < experience.ExpHeureDep && exp.Finheure < experience.ExpHeureFin || exp.Debutheure > experience.ExpHeureFin && exp.Finheure > experience.ExpHeureDep)) {
+            return false // on peut pas rajouter l'expérience
+        }
+    }
+    return true //on peut rajouter l'expérience
+}
+
+
+function TestValeursNonVide(exp) {
+    if (isNaN(parseInt(exp.km)) || !exp.date || !exp.Debutheure || !exp.Finheure || !exp.MeteoId || !exp.AccompagnateurId || !exp.FatigueId || !exp.CirculationId) {
+        alert("Veuillez sélectionner toutes les options requises.");
+        return false; 
+    }
+    if (!DateHeureNonDoublons(exp)) {
+        alert("Vous avez mit la même date avec les même horaires deux fois.");
+        return false
+    }
+    return ConfirmationDesDonnees(exp);
+}
+        
+
+        function ConduiteEnregistree(){
+            let idExpCon = ExpConduite.length+1; 
+            var exp={};
+
+            exp.date = document.getElementById('date').value;
+            exp.Debutheure = document.getElementById('Debutheure').value;
+            exp.Finheure = document.getElementById('Finheure').value;
+            exp.MeteoId = document.getElementById('MeteoId').value;
+            exp.km = document.getElementById('km').value;
+            exp.AccompagnateurId = document.getElementById('AccompagnateurId').value;
+            exp.FatigueId = document.getElementById('FatigueId').value;
+            exp.CirculationId = document.getElementById('CirculationId').value;
+                      
+            const TestsValeur = TestValeursNonVide(exp);
+
+            if (!TestsValeur) {
+                return true; 
+            }
+            
+            if (exp.Finheure <= exp.Debutheure) {
+                alert("L'heure d'arrivée doit être supérieure à l'heure de départ.");
+                return true;
+            }
+            
+            alert('Experience enregistrée avec succès !');
+            localStorage.km_total = (localStorage.km_total ?? 0) + +exp.km
+            exp.km_total = Kilometragetotal + parseInt(exp.km);
+            Kilometragetotal = exp.km_total;
+            document.getElementById('km_total').innerText = exp.km_total + " km";
+            
+
+            let ExpConSuivante = {
+                "ExpConduite":idExpCon,
+                "ExpDate":exp.date, 
+                "ExpHeureDep": exp.Debutheure, 
+                "ExpHeureFin": exp.Finheure, 
+                "ExpMeteo":Meteo[exp.MeteoId-1].id, 
+                "ExpFatigue":Fatigue[exp.FatigueId-1].id, 
+                "ExpConduite":EtatDeConduite[exp.CirculationId-1].id, 
+                "ExpAccompagnant":Accompagnant[exp.AccompagnateurId-1].id, 
+                "ExpKm":exp.km, 
+                "ExpTotal":Kilometragetotal
+            };
+
+            window.localStorage.setItem("XpConduite", JSON.stringify(ExpConSuivante));
+        
+            console.log(exp);
+            console.log(ExpConSuivante);
+            ExpConduite.push(ExpConSuivante);
+            localStorage.setItem("LstExpConduite", JSON.stringify(ExpConduite));
+            console.log(localStorage);
+
+            return false
+        }
+
+    </script>
+
+</head>
+<body>
+    <header>
+        <h1>Assistant d'Expérience de Conduite</h1>
+        <p>Nous contacter : </p>
+        <p>Tél : 03 88 99 77 44</p>
+        <p>Mail : lareusiteaupermis@gmail.com</p>
+    </header>
+    <br>
+
+    <form>
+        <fieldset>
+        <legend>Formulaire</legend>
+        <label for="date">Date :</label> 
+        <input type="date" id="date" name="date" required="">
+    
+
+        <label for="Debutheure">Heure de Début :</label> 
+        <input type="time" name="Debutheure" id="Debutheure" required="">
+    
+        <label for="Finheure">Heure de Fin :</label> 
+        <input type="time" name="Finheure" id="Finheure" required="">
+
+        <label for="km">Kilométrage parcouru :</label> 
+        <input type="number" id="km" name="km" min="0" required="">
+
+        <label for="MeteoId">Météo :</label> 
+        <select name="Meteo" id="MeteoId" required="">
+        <option disabled selected value="">~Option~</option>
+        </select>
+    
+
+        <label for="AccompagnateurId">Accompagnateur :</label>  
+        <select name="Accompagnateur" id="AccompagnateurId" required="">
+        <option disabled selected value="">~Option~</option>
+        </select>
+
+                    
+        <label for="FatigueId">Fatigue :</label> 
+        <select name="Fatigue" id="FatigueId" required="">
+        <option disabled selected value="">~Option~</option>
+        </select>
+                    
+        <label for="CirculationId">Circulation :</label> 
+        <select name="EtatDeConduite" id="CirculationId" required="">
+        <option disabled selected value="">~Option~</option>
+        </select>
+
+        <label for="km">Distance totale :</label> 
+        <span id="km_total"></span>
+            <br>
+
+            
+        <button type="button" class="envoyer" onclick="ConduiteEnregistree()">Envoyer</button><br>
+        <a href="Bilan.html">Voir le Bilan</a><br>
+        <button type="reset" class="reset" onclick="localStorage.LstExpConduite = '[]';">Réinitialiser le formulaire</button>
+    </fieldset>
+    </form>
+    <br>
+            
+        <footer>
+            <p>Créé par Justine Hannauer | Copyright © 2024</p>
+            <a class="text-center text-white" href="https://www.envoituresimone.com">En route Simone</a>
+            <a class="text-center text-white" href="https://fr.wikipedia.org/">Wikipédia</a>
+        </footer>
+    
+
+
+</body>
+</html>

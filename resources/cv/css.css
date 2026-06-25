@@ -1,0 +1,58 @@
+body {
+	  		font-family: "Segoe UI",Arial,sans-serif;
+		}
+		
+		p {
+			margin: 5px 0;
+		}
+		
+		h1 {
+			font-size: 42px;
+			font-weight: 400;
+			margin: 10px 0;
+		}
+		
+		#loisirs li {
+			list-style: square;
+		}
+		
+		#experiences>li {
+			list-style: circle;
+			margin-bottom: 10px;
+		}
+		
+		#experiences li p {
+			margin: 5px 0;
+		}
+		
+		.description {
+			padding-left: 20px;
+		}
+		
+		.description li {
+			list-style-type: "\00BB";
+			padding-left: 5px;
+		}
+		
+		#experiences li p:nth-child(2) {
+			font-family: sans-serif;
+			font-size: 12px;
+		}
+		
+		.intitule {
+			width: 400px;
+		}
+		
+		hr {
+			margin-top: 30px;
+		}
+		
+		.competences {
+			font-weight: bold;
+		}
+		
+		img {
+			width: 100px;
+			height: 100px;
+		}
+		

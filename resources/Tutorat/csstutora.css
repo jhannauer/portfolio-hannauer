@@ -1,0 +1,186 @@
+body{
+    margin: 0 auto;
+}
+
+.wrapper{
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-around{
+    justify-content: space-around;
+}
+
+.item-center{
+    align-items: center;
+}
+
+.font-nav{
+    font-family: "Instrument Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.logo{
+    height: 70px;
+}
+
+.bg-black{
+    background-color:#0B161A;
+}
+.text-white{
+    color: #F9F9F9;
+}
+.text-orange{
+    color: #D5843F;
+}
+
+a{ 
+    all: unset;
+}
+
+ul{
+    list-style: none;
+}
+
+
+nav{
+    padding: 0.5em 1.5em;
+}
+
+nav li{
+    padding: 0 0.3em 0.2em 0.3em;
+}
+
+nav li:hover{
+    border-bottom: 1px #D5843F solid;
+}
+
+nav div img{
+    margin-right: 1em;
+}
+
+button{
+    all : unset;
+}
+
+.btn-action{
+    color: #F9F9F9;
+    background-color: #D5843F;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1em;
+}
+
+.main-contenair{
+    position: relative;
+    background-size: cover ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('./img/img_header.jpg');
+    height: 70vh;
+    padding: 2em 0;
+    text-align: center;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.main-contenair::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+
+h1{
+    font-family: "Instrument Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 5em;
+    margin: 0.5em 0;
+}
+
+
+p{
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 1em;
+}
+
+.opacity-50{
+    opacity: 50%;
+    color: #141E20;
+}
+
+.moments{
+    text-align: center;
+    padding-bottom: 2em;
+    margin-top: 2em;
+}
+
+h2{
+    font-family: "Instrument Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 3em;
+}
+
+.card{
+    width:450px
+}
+
+.bg-lightblack{
+    background-color: #141E20;
+}
+
+.card p{
+    margin-top: 0.2em; /* Moins d'espace au-dessus du texte */
+    margin-bottom: 1.5em;
+}
+
+.subtitle{
+    font-family: "Island Moments", cursive;
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.text-orange{
+    color: #D5843F;
+}
+
+.special{
+    padding-bottom: 2em;
+    padding-top: 2em;
+}
+
+.special hr{
+    border-color: #d5843f!important;
+    width:10em;
+    margin-right:1em;
+}
+
+.move-left {
+    margin-left: -200px; /* Ajustez la valeur selon vos besoins */
+}

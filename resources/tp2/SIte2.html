@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+	  	<meta charset="UTF-8">
+	  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  	<meta name="author" content="Justine Hannauer">
+	  	<title>Formulaire pour les étudiants</title>
+	 	<style>
+	  	span {width: 150px;display: inline-block;}
+	  	input:required:invalid{
+		  outline: 2px solid red;}
+		input:required:valid{
+			outline: 2px solid green;}
+		radio1,radio2{align-items: center;}
+		input {vertical-align:middle;}
+        body{font-family:Verdana;font-size:14pt;line-height:35px;text-align:center;}
+		.bouttons{margin-left: auto;margin-right: auto; text-align: left; width: fit-content;}
+		.par{margin-top: 0px;margin-bottom: 0px;padding: 0px;}
+	  	</style>
+	</head>
+	  	<body>
+	  	<h1>Bonjour ! J'ai crée ce formulaire pour en savoir comment les gens s'en sortent en HTML.</h1>
+		<p>Donnez-moi vos coordonnées s'il vous plait avant le quizz !</p>
+		<form action="monpremierformulaire.php" method="post">
+
+		<fieldset><legend>Informations personnelles</legend>
+		<div class = "bouttons"><span>Nom</span><input type="text" name="nom" placeholder="Saisir le nom" required><br>
+		<span>Prénom</span><input type="text" name="prenom" placeholder="Saisir le prénom" required><br>
+		<span>Email</span><input type="email" name="email" placeholder="Saisir vous email" required pattern= ".+@.+\..+"><br>
+		<span>Date du jour</span><input type="date" id="start" name="trip-start" value="" min="2000-01-01" max="2099-12-31" >
+		</div>
+		</fieldset>
+		<br>
+		<fieldset><legend>Quizz sur l'HTML</legend>
+
+		
+		<p>En HTML, quelle commande permet d'écrire du texte ?</p>
+		
+		<div class="bouttons"><input type="radio" name="radio" id="radio1" value="1">
+		<label for="radio1">&lt;p&gt; </label><br>
+		<input type="radio" name="radio" id="radio2" value="2">
+		<label for="radio2">&lt;text&gt;</label>
+		</div>
+
+		<p> Avec quelle(s) commande(s) peut-on utliser pour des listes ? (plusieurs réponses possibles)</p>
+		
+		<div class="bouttons"><input type="checkbox" name="un test" id="check1" value="1">
+		<label for="check1">&lt;ol&gt;</label><br>
+		<input type="checkbox" name="un test" id="check2" value="2">
+		<label for="check2">&lt;li&gt;</label><br>
+		<input type="checkbox" name="un test" id="check3" value="3">
+		<label for="check3">&lt;list&gt;</label><br>
+		<input type="checkbox" name="un test" id="check4" value="4">
+		<label for="check4">&lt;ul&gt;</label><br>
+		<input type="checkbox" name="un test" id="check5" value="5">
+		<label for="check5">Autre :</label>
+		</div>
+		<p class="par">(répondez dans le carré en HTML/CSS)</p>
+		
+		<textarea name="commentaire" cols="30" rows="10"></textarea><br>
+		
+		
+		<label for="liste_deroulante">Voilà une liste déroulante :</label><br>
+		<select id="liste_deroulante" name="liste_deroulante">
+			<optgroup label="Catégorie une">
+				<option value="option1">HTML</option>
+				<option value="option2">CSS</option>
+				</optgroup>
+			<optgroup label="Catégorie deux">
+			<option value="option3">Sans CSS</option>
+			<option value="option4">HTML et CSS</option>
+			</optgroup>
+			</select><br>
+		<button>Envoyer</button>
+		</fieldset>
+		</form>
+	</body>
+</html>
+

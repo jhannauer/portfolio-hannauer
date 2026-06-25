@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Curriculum Vitae de Justine Hannauer">
+    <meta name="keywords" content="justine, hannauer, curriculum vitae, informatique">
+    <meta name="author" content="Justine Hannauer">
+    <title>Curriculum Vitae</title>
+    <style>
+        abbr {
+            color: brown;
+        }
+
+        dt {
+            font-weight: bold;
+        }
+
+        dl, dd {
+            font-size: 0.9rem;
+        }
+
+        dd {
+            margin-bottom: 1em;
+        }
+
+        thead, tfoot {
+            background-color: #3f87a6;
+            color: #fff;
+        }
+
+        tbody {
+            background-color: #e4f0f5;
+        }
+
+        caption {
+            padding: 10px;
+            caption-side: bottom;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid rgb(200, 200, 200);
+            letter-spacing: 1px;
+            font-family: sans-serif;
+            font-size: 0.8rem;
+            margin: auto;
+            width: 80%;
+        }
+
+        td, th {
+            border: 1px solid rgb(190, 190, 190);
+            padding: 5px 10px;
+            text-align: center;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 20px;
+        }
+
+        p {
+            margin: 5px 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 400;
+            margin: 10px 0;
+        }
+
+        #loisirs li {
+            list-style: square;
+        }
+
+        #experiences > li {
+            list-style: circle;
+            margin-bottom: 10px;
+        }
+
+        #experiences li p {
+            margin: 5px 0;
+        }
+
+        .description {
+            padding-left: 20px;
+        }
+
+        .description li {
+            list-style-type: "\00BB";
+            padding-left: 5px;
+        }
+
+        .intitule {
+            width: 400px;
+        }
+
+        hr {
+            margin-top: 30px;
+        }
+
+        .competences {
+            font-weight: bold;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            vertical-align: middle;
+        }
+
+        .centered-image {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Curriculum Vitae Justine HANNAUER</h1>
+
+    <img src="https://img.freepik.com/vecteurs-premium/profil-avatar-femme-icone-ronde_24640-14042.jpg" alt="Photo de profil">
+
+    <h2>Informations personnelles</h2>
+
+    <p>Née le 12 mai 2004 (19 ans)</p>
+    <p>119 route Burkel, 67400 Illkirch-Graffenstaden</p>
+    <a href="mailto:justine.hannauer@orange.fr"><strong>justine.hannauer@orange.fr</strong></a>
+    <p><b>0677855213</b></p>
+    <p>Nationalité française</p>
+
+    <hr>
+
+    <h2>Formations</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Intitulé</th>
+                <th>Détails</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="intitule">Licence d'informatique</td>
+                <td>Université Math-Info, Strasbourg • 2022 à aujourd'hui</td>
+            </tr>
+            <tr>
+                <td class="intitule">Baccalauréat Scientifique - Spécialité SVT, NSI</td>
+                <td>Lycée Jean Monnet, Strasbourg • 2019 à 2022</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Compétences</h2>
+
+    <p class="competences">Relationnel :</p>
+    <ul>
+        <li>Travail en équipe</li>
+        <li>Sens de la communication</li>
+        <li>Dynamique</li>
+    </ul>
+
+    <video style="display: block; margin: 0 auto;" id="matrix" controls width="250" muted autoplay loop>
+        <source src="thumb_up.mp4" type="video/mp4">
+    </video>
+
+    <p class="competences">Techniques :</p>
+    <ol>
+        <li>HTML</li>
+        <li><abbr title="Cascading Style Sheets">CSS</abbr></li>
+        <li>Python, notamment avec les boucles <code>while()</code></li>
+        <li><strong>Diversifié</strong> de <sub>la</sub> <sup>typographie</sup><i>typographie</i></li>
+    </ol>
+
+    <p style="text-align:center">
+        <a href="frame.png">
+            <img src="frame.png" width="10" height="40" alt="QR Code" title="Cliquez pour agrandir" class="centered-image">
+        </a>
+    </p>
+
+    <hr>
+
+    <h2>Expériences professionnelles</h2>
+
+    <ul id="experiences">
+        <li>
+            <p>Préparatrice de commande</p>
+            <p>Leclerc Drive - Depuis Juillet 2023</p>
+            <ul class="description">
+                <li>Préparation des commandes</li>
+                <li>Acheminement des commandes au client</li>
+                <li>....</li>
+            </ul>
+        </li>
+        <li><s>Garde du corps</s></li>
+    </ul>
+
+    <hr>
+
+    <h2>Qualités</h2>
+
+    <ul style="list-style-type: '► '">
+        <li>Patiente</li>
+        <li>Intéressée par ce qui m'entoure</li>
+        <li>Serviable, aide son prochain</li>
+        <li>Veut réussir ses projets</li>
+        <li>Autonome, motivée</li>
+    </ul>
+
+    <hr>
+
+    <h2>Loisirs et hobbies</h2>
+
+    <ul id="loisirs">
+        <li>Jeux vidéos</li>
+        <li><i>Lecture</i></li>
+        <li>Plongée sous-marine</li>
+        <li>Les animaux</li>
+        <li>Les musiques</li>
+        <li>La natation</li>
+    </ul>
+
+    <hr>
+
+    <h2>Certificats</h2>
+    <ul style="list-style-type: '→ '">
+        <li>Certification Pix</li>
+        <li>PSC1</li>
+        <li>RIFA NAP</li>
+        <li><em>RIFA Plongée</em></li>
+    </ul>
+
+    <hr>
+
+    <h2>Langues</h2>
+
+    <table>
+        <caption>Langues Connues</caption>
+        <thead>
+            <tr>
+                <th scope="col">Langue</th>
+                <th scope="col">Niveau</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Français</th>
+                <td>Très bon</td>
+            </tr>
+            <tr>
+                <th scope="row">Allemand</th>
+                <td>Médiocre</td>
+            </tr>
+            <tr>
+                <th scope="row">Anglais</th>
+                <td>Bon</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="col">Langue</th>
+                <th scope="col">Niveau</th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr>
+
+    <h2>Stage</h2>
+
+    <p>Stage de 3ème dans l'institut de Génétique, Biologie Moléculaire et Cellulaire (IGBMC)</p>
+
+    <hr>
+
+    <h3>Autres informations</h3>
+
+    <dl>
+        <dt>À propos des informations</dt>
+        <dd>Ce sont de fausses informations</dd>
+        <dt>Mais...</dt>
+        <dd>Le reste est normalement juste !</dd>
+    </dl>
+
+    <hr>
+
+    <a class="text-center text-white" href="https://www.google.fr">Google</a><br>
+    <a class="text-center text-white" href="https://www.wikipedia.org">Wikipédia</a>
+    <p>CV fini le <time datetime="2023-10-02">2 Octobre </time></p>
+
+</body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Illustrations & Maquettes — Justine Hannauer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1a1a2e;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 3rem 2rem 2.5rem;
+      text-align: center;
+      background: linear-gradient(135deg, #ddeeff 0%, #e8e6fa 50%, #d8f0e8 100%);
+      border-bottom: 1px solid #ddd;
+      position: relative;
+    }
+    .back-link {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.5rem;
+      font-size: 13px;
+      color: #3c3489;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid #afa9ec;
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: background 0.15s;
+    }
+    .back-link:hover { background: #fff; }
+    .hero-badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 500;
+      color: #185fa5;
+      background: #fff;
+      border: 1px solid #b5d4f4;
+      border-radius: 999px;
+      padding: 4px 14px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.04em;
+    }
+    .hero h1 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      color: #1a1a2e;
+      margin-bottom: 0.4rem;
+    }
+    .hero .subtitle {
+      font-size: 14px;
+      color: #534ab7;
+    }
+
+    /* ── Layout ── */
+    main { flex: 1; }
+    .section {
+      padding: 2.5rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section + .section { padding-top: 0; }
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: #888;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Cards téléchargement ── */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-bottom: 0;
+    }
+    .download-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 1.25rem;
+      text-decoration: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .download-card:hover {
+      border-color: #85b7eb;
+      box-shadow: 0 2px 12px rgba(24,95,165,0.07);
+    }
+    .download-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: #eeedfe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .download-info h3 {
+      font-size: 14px;
+      font-weight: 500;
+      color: #1a1a2e;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+    .download-info p {
+      font-size: 12px;
+      color: #888;
+    }
+    .download-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eeedfe;
+      color: #3c3489;
+      margin-top: 6px;
+    }
+
+    /* ── Section Figma ── */
+    .figma-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .figma-col {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+    .figma-col-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #555;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .figma-col-title span {
+      font-size: 16px;
+    }
+    .figma-images {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .figma-images img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #e5e5e5;
+      display: block;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #e5e5e5;
+      color: #999;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 13px;
+      background: #fff;
+      margin-top: 1rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 1.35rem; }
+      .figma-grid { grid-template-columns: 1fr; }
+      .back-link span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <a href="../2emeannee.html" class="back-link">← <span>Retour</span></a>
+    <div class="hero-badge">Design</div>
+    <h1>Illustrations & Maquettes</h1>
+    <p class="subtitle">InDesign, Illustrator et Figma</p>
+  </div>
+
+  <main>
+
+    <!-- Section illustrations téléchargeables -->
+    <div class="section">
+      <div class="section-label">Illustrations à télécharger</div>
+      <div class="download-grid">
+
+        <a href="TD2-MEP-Justine-Hannauer.pdf" download class="download-card">
+          <div class="download-icon">📰</div>
+          <div class="download-info">
+            <h3>Mise en page InDesign</h3>
+            <p>Illustration réalisée sur Adobe InDesign</p>
+            <span class="download-badge">📥 PDF</span>
+          </div>
+        </a>
+
+        <a href="RapportPPP3_HANNAUER_Justine.pdf" download class="download-card">
+          <div class="download-icon">📋</div>
+          <div class="download-info">
+            <h3>Rapport — Première expérience professionnelle</h3>
+            <p>Illustration du rapport de première expérience professionnelle</p>
+            <span class="download-badge">📥 PDF</span>
+          </div>
+        </a>
+
+        <a href="ART3_TP06_HANNAUER_Justine.pdf" download class="download-card">
+          <div class="download-icon">🎨</div>
+          <div class="download-info">
+            <h3>Illustration Illustrator</h3>
+            <p>Travail réalisé sur Adobe Illustrator</p>
+            <span class="download-badge">📥 PDF</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Section maquettes Figma -->
+    <div class="section">
+      <div class="section-label">Maquettes Figma</div>
+      <div class="figma-grid">
+
+        <div class="figma-col">
+          <div class="figma-col-title"><span>🖥️</span> Format PC</div>
+          <div class="figma-images">
+            <img src="Accueil (Deskop).png" alt="Maquette desktop - ferme">
+            <img src="Accueil_Deskop.png" alt="Maquette desktop - SIG">
+          </div>
+        </div>
+
+        <div class="figma-col">
+          <div class="figma-col-title"><span>📱</span> Format Mobile</div>
+          <div class="figma-images">
+            <img src="Accueil (mobile).png" alt="Maquette mobile - ferme">
+            <img src="accueil_mobile.png" alt="Maquette mobile - SIG">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    Créé par Justine Hannauer · © 2025
+  </footer>
+
+</body>
+</html>
